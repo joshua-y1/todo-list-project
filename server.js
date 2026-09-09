@@ -72,15 +72,17 @@ app.put('/markUnComplete', (request, response) => {
     .catch(error => console.error(error));
 });
 
+// DELETE
 app.delete('/deleteItem', (request, response) => {
     db.collection('todos').deleteOne({thing: request.body.itemFromJS})
     .then(result => {
         console.log('Todo Deleted');
-        responses.json('Todo Deleted');
+        response.json('Todo Deleted');
     })
     .catch(error => console.error(error));
 });
 
+// PORT SETUP
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
