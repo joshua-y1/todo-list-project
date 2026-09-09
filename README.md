@@ -13,4 +13,5 @@ DB_STRING=your_mongodb_connection_string
 4. Visit `localhost:3000`
 
 ## Screenshot
+<img width="606" height="489" alt="Screenshot 2026-09-09 at 2 45 01 AM" src="https://github.com/user-attachments/assets/0a07bda3-2916-4fe6-b9de-db0daa6bab88" />
 
