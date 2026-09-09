@@ -13,9 +13,9 @@ DB_STRING=your_mongodb_connection_string
 4. Visit `localhost:3000`
 
 ## Screenshot
+https://todo-list-project-9wwp.onrender.com
 <img width="573" height="437" alt="Screenshot 2026-09-09 at 2 46 53 AM" src="https://github.com/user-attachments/assets/3aa09e45-afcb-4bc2-9e00-71e8a2970df4" />
 
-https://todo-list-project-9wwp.onrender.com
 
 
 
