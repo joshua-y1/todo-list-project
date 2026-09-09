@@ -26,6 +26,15 @@ app.get('/', async (request, response) => {
   response.render('index.ejs', { items: todoItems, left: itemsLeft });
 });
 
+app.post('/addTodo', (request, response) => {
+  db.collection('todos').insertOne({thing: request.body.todoItem, completed: false})
+  .then(result => {
+    console.log('Todo Added');
+    response.redirect('/');
+  })
+  .catch(error => console.error(error));
+});
+
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
