@@ -41,45 +41,45 @@ app.post('/addTodo', (request, response) => {
 
 // UPDATE
 app.put('/markComplete', (request, response) => {
-    db.collection('todos').updateOne({thing: request.body.itemFromJS},{
-      $set: {
-        completed: true
-      }    
-    },{
-        sort: {_id: -1},
-        upsert: false  
-    })
-    .then(result => {
-        console.log('Marked Complete');
-        response.json('Marked Complete');
-    })
-    .catch(error => console.error(error));
+  db.collection('todos').updateOne({thing: request.body.itemFromJS},{
+    $set: {
+      completed: true
+    }    
+  },{
+      sort: {_id: -1},
+      upsert: false  
+  })
+  .then(result => {
+    console.log('Marked Complete');
+    response.json('Marked Complete');
+  })
+  .catch(error => console.error(error));
 });
 
 app.put('/markUnComplete', (request, response) => {
-    db.collection('todos').updateOne({thing: request.body.itemFromJS},{
-      $set: {
-        completed: false
-      }    
-    },{
-        sort: {_id: -1},
-        upsert: false  
-    })
-    .then(result => {
-        console.log('Marked Inomplete');
-        response.json('Marked Incomplete');
-    })
-    .catch(error => console.error(error));
+  db.collection('todos').updateOne({thing: request.body.itemFromJS},{
+    $set: {
+      completed: false
+    }    
+  },{
+      sort: {_id: -1},
+      upsert: false  
+  })
+  .then(result => {
+    console.log('Marked Inomplete');
+    response.json('Marked Incomplete');
+  })
+  .catch(error => console.error(error));
 });
 
 // DELETE
 app.delete('/deleteItem', (request, response) => {
-    db.collection('todos').deleteOne({thing: request.body.itemFromJS})
-    .then(result => {
-        console.log('Todo Deleted');
-        response.json('Todo Deleted');
-    })
-    .catch(error => console.error(error));
+  db.collection('todos').deleteOne({thing: request.body.itemFromJS})
+  .then(result => {
+    console.log('Todo Deleted');
+    response.json('Todo Deleted');
+  })
+  .catch(error => console.error(error));
 });
 
 // PORT SETUP
