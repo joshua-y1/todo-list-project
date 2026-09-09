@@ -15,10 +15,16 @@ MongoClient.connect(dbConnectionStr)
   })
   .catch(err => console.error(`Connection error: ${err}`))
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+
+
 app.get('/', (req, res) => {
     res.send("Hello World");
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
