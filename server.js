@@ -54,7 +54,7 @@ app.put('/markComplete', (request, response) => {
         response.json('Marked Complete');
     })
     .catch(error => console.error(error));
-})
+});
 
 app.put('/markUnComplete', (request, response) => {
     db.collection('todos').updateOne({thing: request.body.itemFromJS},{
@@ -66,11 +66,20 @@ app.put('/markUnComplete', (request, response) => {
         upsert: false  
     })
     .then(result => {
-        console.log('Marked Complete');
-        response.json('Marked Complete');
+        console.log('Marked Inomplete');
+        response.json('Marked Incomplete');
     })
     .catch(error => console.error(error));
-})
+});
+
+app.delete('/deleteItem', (request, response) => {
+    db.collection('todos').deleteOne({thing: request.body.itemFromJS})
+    .then(result => {
+        console.log('Todo Deleted');
+        responses.json('Todo Deleted');
+    })
+    .catch(error => console.error(error));
+});
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
