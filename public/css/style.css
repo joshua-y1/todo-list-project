@@ -1,0 +1,65 @@
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  color: darkred;
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+.todoItems {
+  list-style: none;
+  padding-left: 0;
+}
+
+.item {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.item span:not(.fa-trash) {
+  cursor: pointer;
+}
+
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.fa-trash {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.fa-trash:hover {
+  color: darkred;
+}
+
+input[type="text"] {
+  font-size: 1.1rem;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 280px;
+}
+
+input[type="submit"] {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  margin-left: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #eee;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: #ddd;
+}
